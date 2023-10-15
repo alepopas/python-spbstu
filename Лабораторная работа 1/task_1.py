@@ -2,10 +2,11 @@ numbers = [2, -93, -2, 8, None, -44, -1, -85, -14, 90, -22, -90, -100, -8, 38, -
 
 # TODO заменить значение пропущенного элемента средним арифметическим
 
-numbersWithoutNone = numbers[:4] + numbers[5:]
+missingItemIndex = numbers.index(None)
+numbersWithoutNone = numbers[:missingItemIndex] + numbers[missingItemIndex+1:]
 sumOfNumbers = sum(numbersWithoutNone)
 lenOfNumbers = len(numbers)
 missedItem = sumOfNumbers/lenOfNumbers
-numbers[4] = missedItem
+numbers[missingItemIndex] = missedItem
 
 print("Измененный список:", numbers)
